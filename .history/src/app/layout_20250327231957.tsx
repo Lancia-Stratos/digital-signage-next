@@ -6,6 +6,7 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
+  UserProfile,
 } from '@clerk/nextjs'
 
 import TopTitle from "./components/TopTitle";
@@ -52,6 +53,7 @@ export default function RootLayout({
               </SignedOut>
               <SignedIn>
                 <UserButton />
+                <UserProfile />
               </SignedIn>
             </div>
 

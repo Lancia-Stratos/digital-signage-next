@@ -43,9 +43,11 @@ export default function RootLayout({
               <TopTitle />
             </div>
 
+            <div className="flex justify-end ml-auto items-center">
+            </div>
+
             <div className="flex justify-end items-center gap-4 ml-auto">
               <TopMenu />
-
               <SignedOut>
                 <SignInButton />
                 <SignUpButton />

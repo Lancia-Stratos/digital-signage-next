@@ -9,7 +9,7 @@ import {
 } from '@clerk/nextjs'
 
 import TopTitle from "./components/TopTitle";
-import TopMenu from "./components/TopMenu";
+
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -44,8 +44,6 @@ export default function RootLayout({
             </div>
 
             <div className="flex justify-end items-center gap-4 ml-auto">
-              <TopMenu />
-
               <SignedOut>
                 <SignInButton />
                 <SignUpButton />

@@ -45,7 +45,6 @@ export default function RootLayout({
 
             <div className="flex justify-end items-center gap-4 ml-auto">
               <TopMenu />
-
               <SignedOut>
                 <SignInButton />
                 <SignUpButton />

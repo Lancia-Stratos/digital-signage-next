@@ -9,7 +9,7 @@ import {
 } from '@clerk/nextjs'
 
 import TopTitle from "./components/TopTitle";
-import TopMenu from "./components/TopMenu";
+
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -37,24 +37,19 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="sq">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <header className="flex items-center p-4 h-14 shadow-md mb-14">
 
-            <div className="flex justify-start items-center">
-              <TopTitle />
-            </div>
+          <div className="flex justify-start items-center">
+            <TopTitle />
+          </div>
 
-            <div className="flex justify-end items-center gap-4 ml-auto">
-              <TopMenu />
-
-              <SignedOut>
-                <SignInButton />
-                <SignUpButton />
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </div>
-
+          <header className="flex justify-end items-center p-4 gap-4 h-14 shadow-md mb-14">
+            <SignedOut>
+              <SignInButton />
+              <SignUpButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </header>
 
           {children}

@@ -52,6 +52,7 @@ export default function RootLayout({
               </SignedOut>
               <SignedIn>
                 <UserButton />
+                <UserProfile />
               </SignedIn>
             </div>
 
