@@ -82,7 +82,7 @@ model Shipment {
   notes         String? // 備考
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
-  createdBy     Int? // 作成者ID
+  createdBy     String? // 作成者ID
   createdByUser User?          @relation(fields: [createdBy], references: [id])
 }
 
