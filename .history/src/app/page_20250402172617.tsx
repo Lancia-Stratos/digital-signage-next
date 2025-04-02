@@ -7,9 +7,7 @@ export default function Home() {
       <div>
         <h1 className="text-4xl font-bold text-center">デジタルサイネージシステム</h1>
       </div>
-      <Button>
-        <LogIn />Log In
-      </Button>
+      <LogIn />
     </>
   );
 } 

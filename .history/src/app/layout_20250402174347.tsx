@@ -8,9 +8,6 @@ import {
   UserButton,
 } from '@clerk/nextjs'
 
-import { LogIn, UserPlus } from "lucide-react"
-import { Button } from "@/components/ui/button"
-
 import TopTitle from "./components/TopTitle";
 import TopMenu from "./components/TopMenu";
 
@@ -50,17 +47,11 @@ export default function RootLayout({
               <TopMenu />
 
               <SignedOut>
-
                 <Button>
                   <LogIn />
-                  <SignInButton />
                 </Button>
-
-                <Button>
-                  <UserPlus />
-                  <SignUpButton />
-                </Button>
-
+                <SignInButton />
+                <SignUpButton />
               </SignedOut>
               <SignedIn>
                 <UserButton />
