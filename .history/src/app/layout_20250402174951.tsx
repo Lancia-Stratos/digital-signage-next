@@ -58,7 +58,7 @@ export default function RootLayout({
                 </SignInButton>
 
                 <SignUpButton mode="modal">
-                  <Button className="cursor-pointer">
+                  <Button>
                     <UserPlus className="mr-2" />
                     Sign up
                   </Button>

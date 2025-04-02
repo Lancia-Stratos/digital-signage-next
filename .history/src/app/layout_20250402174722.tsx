@@ -50,19 +50,17 @@ export default function RootLayout({
               <TopMenu />
 
               <SignedOut>
-                <SignInButton mode="modal">
-                  <Button className="cursor-pointer">
-                    <LogIn className="mr-2" />
-                    Sign in
-                  </Button>
-                </SignInButton>
 
-                <SignUpButton mode="modal">
-                  <Button className="cursor-pointer">
-                    <UserPlus className="mr-2" />
-                    Sign up
-                  </Button>
-                </SignUpButton>
+                <Button className="cursor-pointer">
+                  <LogIn />
+                  <SignInButton />
+                </Button>
+
+                <Button>
+                  <UserPlus />
+                  <SignUpButton />
+                </Button>
+
               </SignedOut>
               <SignedIn>
                 <UserButton />
