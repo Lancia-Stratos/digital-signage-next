@@ -40,7 +40,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="ja">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <header className="flex items-center p-4 h-14 shadow-md mb-14">
+          <header className="flex p-4 h-14 shadow-md mb-14">
 
             <div className="whitespace-nowrap">
               <TopTitle />

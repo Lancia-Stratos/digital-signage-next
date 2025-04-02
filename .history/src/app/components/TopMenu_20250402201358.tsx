@@ -9,7 +9,7 @@ export default function Page() {
                 <Link href="/dashboard">
                     <div className="flex gap-2">
                         <Home className="!w-6 !h-6" />
-                        <div className="text-lg font-bold">Dashboard</div>
+                        <span>Dashboard</span>
                     </div>
                 </Link>
             </Button>

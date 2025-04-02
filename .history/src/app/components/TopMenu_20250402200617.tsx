@@ -5,11 +5,11 @@ import { Home } from "lucide-react"
 export default function Page() {
     return (
         <div>
-            <Button variant="link" className="text-gray-500 hover:text-gray-900">
+            <Button variant="ghost" className="h-auto p-2 text-gray-500 hover:text-gray-900 hover:bg-transparent">
                 <Link href="/dashboard">
-                    <div className="flex gap-2">
-                        <Home className="!w-6 !h-6" />
-                        <div className="text-lg font-bold">Dashboard</div>
+                    <div className="flex items-center gap-2">
+                        <Home className="w-8 h-8" />
+                        <span>Dashboard</span>
                     </div>
                 </Link>
             </Button>
