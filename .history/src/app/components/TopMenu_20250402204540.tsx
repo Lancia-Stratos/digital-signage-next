@@ -15,7 +15,7 @@ export default function Page() {
             </Button>
 
             <Button variant="link" className="text-gray-500 hover:text-gray-900">
-                <Link href="/unit">
+                <Link href="/dashboard">
                     <div className="flex items-center gap-2">
                         <Ruler className="!w-6 !h-6" />
                         <div className="text-lg font-bold">単位</div>

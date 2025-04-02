@@ -47,9 +47,7 @@ export default function RootLayout({
             </div>
 
             <div className="ml-12">
-              <SignedIn>
-                <TopMenu />
-              </SignedIn>
+              <TopMenu />
             </div>
 
             <div className="flex gap-4 ml-auto">
