@@ -42,15 +42,12 @@ export default function RootLayout({
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
           <header className="flex items-center p-4 h-14 shadow-md mb-14">
 
-            <div className="flex justify-start items-center whitespace-nowrap">
+            <div className="flex justify-start items-center">
               <TopTitle />
             </div>
 
-            <div className="flex justify-start items-center w-full ml-12">
-              <TopMenu />
-            </div>
-
             <div className="flex justify-end items-center gap-4 ml-auto">
+              <TopMenu />
 
               <SignedOut>
                 <SignInButton mode="modal">

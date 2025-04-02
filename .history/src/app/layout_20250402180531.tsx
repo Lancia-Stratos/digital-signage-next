@@ -46,7 +46,7 @@ export default function RootLayout({
               <TopTitle />
             </div>
 
-            <div className="flex justify-start items-center w-full ml-12">
+            <div className="flex justify-start w-full ml-8">
               <TopMenu />
             </div>
 
