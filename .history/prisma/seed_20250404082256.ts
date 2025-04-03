@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 async function main() {
   console.log("Seeding data...");
 
-  // Unitテーブルのシードデータを作成
+  // Unitテーブルのダミーデータを作成
   const unit1 = await prisma.unit.create({
     data: {
       name: "m",
@@ -33,15 +33,12 @@ async function main() {
   // 初期データを追加する他の処理...
 
   console.log("Data seeding complete.");
-  console.log({ unit1, unit2, unit3 });
 }
 
 main()
-  .then(async () => {
-    await prisma.$disconnect();
+  .catch((err) => {
+    console.error("Error seeding data:", err);
   })
-  .catch(async (e) => {
-    console.error(e);
+  .finally(async () => {
     await prisma.$disconnect();
-    process.exit(1);
   });
