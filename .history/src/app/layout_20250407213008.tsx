@@ -78,7 +78,7 @@ export default function RootLayout({
 
           </header>
 
-          <div className="mx-8">
+          <div className="mx-6">
             {children}
           </div>
 

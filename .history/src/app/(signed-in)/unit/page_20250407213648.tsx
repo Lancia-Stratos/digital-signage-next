@@ -33,24 +33,20 @@ export default async function UnitPage() {
 
                             <TableHeader>
                                 <TableRow>
-                                    <TableHead>ID</TableHead>
-                                    <TableHead>単位名</TableHead>
-                                    <TableHead>作成日</TableHead>
-                                    <TableHead>更新日</TableHead>
+                                    <TableHead className="w-[100px]">Invoice</TableHead>
+                                    <TableHead>Status</TableHead>
+                                    <TableHead>Method</TableHead>
+                                    <TableHead className="text-right">Amount</TableHead>
                                 </TableRow>
                             </TableHeader>
 
                             <TableBody>
-                                {units.map((unit) => (
-                                    <TableRow key={unit.id}>
-                                        <TableCell>{unit.id}</TableCell>
-                                        <TableCell>{unit.name}</TableCell>
-                                        <TableCell>{new Date(unit.createdAt).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '/')}
-                                        </TableCell>
-                                        <TableCell>{new Date(unit.updatedAt).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '/')}
-                                        </TableCell>
-                                    </TableRow>
-                                ))}
+                                <TableRow>
+                                    <TableCell className="font-medium">INV001</TableCell>
+                                    <TableCell>Paid</TableCell>
+                                    <TableCell>Credit Card</TableCell>
+                                    <TableCell className="text-right">$250.00</TableCell>
+                                </TableRow>
                             </TableBody>
 
                         </Table>

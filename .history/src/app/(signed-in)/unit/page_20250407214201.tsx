@@ -33,10 +33,10 @@ export default async function UnitPage() {
 
                             <TableHeader>
                                 <TableRow>
-                                    <TableHead>ID</TableHead>
-                                    <TableHead>単位名</TableHead>
-                                    <TableHead>作成日</TableHead>
-                                    <TableHead>更新日</TableHead>
+                                    <TableHead>Invoice</TableHead>
+                                    <TableHead>Status</TableHead>
+                                    <TableHead>Method</TableHead>
+                                    <TableHead>Amount</TableHead>
                                 </TableRow>
                             </TableHeader>
 

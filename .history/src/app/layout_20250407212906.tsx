@@ -40,7 +40,7 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="ja">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <header className="flex items-center p-4 h-12 shadow-md mb-8 whitespace-nowrap">
+          <header className="flex items-center p-4 h-12 shadow-md mb-6 whitespace-nowrap">
 
             <div className="">
               <TopTitle />
@@ -78,10 +78,7 @@ export default function RootLayout({
 
           </header>
 
-          <div className="mx-8">
-            {children}
-          </div>
-
+          {children}
         </body>
       </html>
     </ClerkProvider>

@@ -78,10 +78,7 @@ export default function RootLayout({
 
           </header>
 
-          <div className="mx-8">
-            {children}
-          </div>
-
+          {children}
         </body>
       </html>
     </ClerkProvider>

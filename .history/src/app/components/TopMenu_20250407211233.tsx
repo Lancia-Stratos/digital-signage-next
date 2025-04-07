@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button"
 // import { Home, Ruler } from "lucide-react"
-import { IoHomeSharp } from "react-icons/io5";
-import { FaPencilRuler } from "react-icons/fa";
+import { IoHomeSharp, FaPencilRuler } from "react-icons/io5";
 
 export default function Page() {
     return (

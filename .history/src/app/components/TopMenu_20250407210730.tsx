@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button"
 // import { Home, Ruler } from "lucide-react"
-import { IoHomeSharp } from "react-icons/io5";
-import { FaPencilRuler } from "react-icons/fa";
+import { IoHomeSharp, } from "react-icons/io5";
 
 export default function Page() {
     return (
@@ -20,8 +19,8 @@ export default function Page() {
             <Button variant="link" className="text-gray-500 hover:text-gray-900">
                 <Link href="/unit">
                     <div className="flex items-center gap-2">
-                        <FaPencilRuler className="!w-5 !h-5" />
                         {/* <Ruler className="!w-6 !h-6" /> */}
+                        < className="!w-5 !h-5" />
                         <div className="text-lg font-bold">単位</div>
                     </div>
                 </Link>
