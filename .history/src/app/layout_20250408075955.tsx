@@ -72,7 +72,7 @@ export default function RootLayout({
               </SignedOut>
 
               <SignedIn>
-                <div className="ml-2 flex items-end">
+                <div className="ml-2 py-2">
                   <UserButton />
                 </div>
               </SignedIn>

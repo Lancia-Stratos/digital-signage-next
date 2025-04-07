@@ -40,18 +40,18 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="ja">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          <header className="flex px-4 py-2 h-12 shadow-md mb-8 whitespace-nowrap">
+          <header className="flex items-center p-4 h-12 shadow-md mb-8 whitespace-nowrap">
+            <div>
+              <div className="">
+                <TopTitle />
+              </div>
 
-            <div className="">
-              <TopTitle />
+              <div className="ml-2">
+                <SignedIn>
+                  <TopMenu />
+                </SignedIn>
+              </div>
             </div>
-
-            <div className="ml-2">
-              <SignedIn>
-                <TopMenu />
-              </SignedIn>
-            </div>
-
             <div className="flex gap-4 ml-auto">
 
               <SignedOut>
@@ -72,9 +72,7 @@ export default function RootLayout({
               </SignedOut>
 
               <SignedIn>
-                <div className="ml-2 flex items-end">
-                  <UserButton />
-                </div>
+                <UserButton />
               </SignedIn>
             </div>
 

@@ -12,7 +12,7 @@ export default function Page() {
                     <div className="flex items-center gap-2">
                         <IoHomeSharp className="!w-4 !h-4" />
                         {/* <Home className="!w-6 !h-6" /> */}
-                        <div className="text-md">Dashboard</div>
+                        <div className="text-md font-bold">Dashboard</div>
                     </div>
                 </Link>
             </Button>
@@ -22,7 +22,7 @@ export default function Page() {
                     <div className="flex items-center gap-2">
                         <FaPencilRuler className="!w-4 !h-4" />
                         {/* <Ruler className="!w-6 !h-6" /> */}
-                        <div className="text-md">単位</div>
+                        <div className="text-md font-bold">単位</div>
                     </div>
                 </Link>
             </Button>

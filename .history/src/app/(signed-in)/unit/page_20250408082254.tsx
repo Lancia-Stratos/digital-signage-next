@@ -15,7 +15,19 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { UnitAdd } from "./components/unitAdd"
+
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
+
 import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
 
@@ -58,12 +70,15 @@ export default async function UnitPage() {
                     </CardContent>
 
                     <CardFooter className="flex justify-end">
-                        <Button>
-                            <UnitAdd />
-                        </Button>
+                        <Button>追加</Button>
                     </CardFooter>
                 </CardHeader>
             </Card>
+
+
+
+
+
         </>
     );
 }

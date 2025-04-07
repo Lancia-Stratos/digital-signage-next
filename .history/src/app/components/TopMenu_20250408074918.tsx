@@ -6,23 +6,23 @@ import { FaPencilRuler } from "react-icons/fa";
 
 export default function Page() {
     return (
-        <div className="flex gap-2 ml-2">
-            <Button variant="link" className="text-gray-500 hover:text-gray-900 p-0">
+        <div className="flex gap-3">
+            <Button variant="link" className="text-gray-500 hover:text-gray-900">
                 <Link href="/dashboard">
                     <div className="flex items-center gap-2">
                         <IoHomeSharp className="!w-4 !h-4" />
                         {/* <Home className="!w-6 !h-6" /> */}
-                        <div className="text-md">Dashboard</div>
+                        <div className="text-md font-bold">Dashboard</div>
                     </div>
                 </Link>
             </Button>
 
-            <Button variant="link" className="text-gray-500 hover:text-gray-900 p-0">
+            <Button variant="link" className="text-gray-500 hover:text-gray-900">
                 <Link href="/unit">
                     <div className="flex items-center gap-2">
                         <FaPencilRuler className="!w-4 !h-4" />
                         {/* <Ruler className="!w-6 !h-6" /> */}
-                        <div className="text-md">単位</div>
+                        <div className="text-md font-bold">単位</div>
                     </div>
                 </Link>
             </Button>

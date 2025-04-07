@@ -15,7 +15,7 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { UnitAdd } from "./components/unitAdd"
+
 import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
 
@@ -24,6 +24,7 @@ export default async function UnitPage() {
     console.log(units)
     return (
         <>
+
             <Card className="">
                 <CardHeader>
                     <CardTitle>単位管理</CardTitle>
@@ -56,14 +57,16 @@ export default async function UnitPage() {
                         </Table>
 
                     </CardContent>
-
-                    <CardFooter className="flex justify-end">
-                        <Button>
-                            <UnitAdd />
-                        </Button>
+                    <CardFooter>
+                        <Button>Button</Button>
                     </CardFooter>
                 </CardHeader>
             </Card>
+
+
+
+
+
         </>
     );
 }
