@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import {
   ClerkProvider,
-  SignedIn,
-  UserButton,
 } from '@clerk/nextjs'
 
 import TopTitle from "./components/TopTitle";

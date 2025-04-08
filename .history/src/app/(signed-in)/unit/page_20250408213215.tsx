@@ -14,7 +14,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { UnitAddButton } from "./components/unitAddButton"
+import { UnitAdd } from "./components/unitAdd"
 import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
 
@@ -57,7 +57,7 @@ export default async function UnitPage() {
                     </CardContent>
 
                     <CardFooter className="flex justify-end">
-                        <UnitAddButton />
+                        <UnitAdd />
                     </CardFooter>
                 </CardHeader>
             </Card>

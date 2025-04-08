@@ -18,9 +18,7 @@ import { UnitAddButton } from "./components/unitAddButton"
 import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
 
-export default async function UnitPage() {
-    const units = await prisma.unit.findMany()
-    console.log(units)
+export function UnitAddForm() {
     return (
         <>
             <Card className="">
@@ -43,21 +41,15 @@ export default async function UnitPage() {
                                 {units.map((unit) => (
                                     <TableRow key={unit.id}>
                                         <TableCell>{unit.id}</TableCell>
-                                        <TableCell>{unit.name}</TableCell>
-                                        <TableCell>{new Date(unit.createdAt).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '/')}
-                                        </TableCell>
-                                        <TableCell>{new Date(unit.updatedAt).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '/')}
-                                        </TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
-
                         </Table>
 
                     </CardContent>
 
                     <CardFooter className="flex justify-end">
-                        <UnitAddButton />
+                        ボタン
                     </CardFooter>
                 </CardHeader>
             </Card>

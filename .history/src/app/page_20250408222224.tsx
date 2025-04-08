@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <SignedIn>
         <div>
-          <h1 className="text-4xl font-bold text-center">デジタルサイネージシステム</h1>
+          <h1 className="text-4xl font-bold text-center">デジタルaサイネージシステム</h1>
         </div>
       </SignedIn>
 

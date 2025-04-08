@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import {
   ClerkProvider,
-  SignedIn,
-  UserButton,
 } from '@clerk/nextjs'
-
-import TopTitle from "./components/TopTitle";
-import TopMenu from "./components/TopMenu";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";

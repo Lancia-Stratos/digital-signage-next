@@ -12,7 +12,7 @@ export default function Home() {
 
       <SignedOut>
         <div className="flex justify-center items-center min-h-[calc(100vh-35rem)]">
-          <SignIn />
+          <SignIn routing="hash" />
         </div>
       </SignedOut>
     </>

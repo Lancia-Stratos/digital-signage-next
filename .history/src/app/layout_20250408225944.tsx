@@ -57,36 +57,39 @@ export default function RootLayout({
         <html lang="ja">
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
 
-            <header className="flex px-4 py-2 h-12 mb-8 whitespace-nowrap">
+            {/* ここからトップヘッダースタート */}
+      <header className="flex px-4 py-2 h-12 mb-8 whitespace-nowrap">
 
-              <div className="">
-                <TopTitle />
-              </div>
+        <div className="">
+          <TopTitle />
+        </div>
 
-              <div className="ml-2">
-                <SignedIn>
-                  <TopMenu />
-                </SignedIn>
-              </div>
+        <div className="ml-2">
+          <SignedIn>
+            <TopMenu />
+          </SignedIn>
+        </div>
 
-              <div className="flex gap-4 ml-auto">
-                <SignedIn>
-                  <div className="ml-2 flex items-end">
-                    <UserButton />
-                  </div>
-                </SignedIn>
-              </div>
-
-            </header>
-
-            <div className="mx-8">
-              {children}
+        <div className="flex gap-4 ml-auto">
+          <SignedIn>
+            <div className="ml-2 flex items-end">
+              <UserButton />
             </div>
+          </SignedIn>
+        </div>
 
-          </body>
-        </html>
-      </ClerkProvider>
-      */}
+      </header>
+      {/* ここまでトップヘッダーエンド */}
+
+      <div className="mx-8">
+        {children}
+      </div>
+
+    </body >
+        </html >
+      </ClerkProvider >
+        */
+}
     </>
   );
 }

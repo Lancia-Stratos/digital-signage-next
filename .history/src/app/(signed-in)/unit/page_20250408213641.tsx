@@ -14,7 +14,7 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { UnitAddButton } from "./components/unitAddButton"
+import { UnitAdd } from "./components/unitAddButton"
 import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
 

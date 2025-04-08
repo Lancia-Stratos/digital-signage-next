@@ -11,7 +11,7 @@ export default function Home() {
       </SignedIn>
 
       <SignedOut>
-        <div className="flex justify-center items-center min-h-[calc(100vh-35rem)]">
+        <div className="flex justify-center items-center min-h-[calc(100vh-30rem)]">
           <SignIn />
         </div>
       </SignedOut>

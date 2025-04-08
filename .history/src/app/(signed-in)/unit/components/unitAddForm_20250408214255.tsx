@@ -18,9 +18,7 @@ import { UnitAddButton } from "./components/unitAddButton"
 import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
 
-export default async function UnitPage() {
-    const units = await prisma.unit.findMany()
-    console.log(units)
+export function UnitAddForm() {
     return (
         <>
             <Card className="">

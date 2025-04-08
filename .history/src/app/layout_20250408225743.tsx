@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <ClerkProvider>
+      {/* <ClerkProvider>
         <html lang="ja">
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
             <SidebarProvider>
@@ -50,13 +50,13 @@ export default function RootLayout({
             </div>
           </body>
         </html>
-      </ClerkProvider>
+      </ClerkProvider> */}
 
-      {/*
       <ClerkProvider>
         <html lang="ja">
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
 
+            {/* ここからトップヘッダースタート */}
             <header className="flex px-4 py-2 h-12 mb-8 whitespace-nowrap">
 
               <div className="">
@@ -78,6 +78,7 @@ export default function RootLayout({
               </div>
 
             </header>
+            {/* ここまでトップヘッダーエンド */}
 
             <div className="mx-8">
               {children}
@@ -86,7 +87,6 @@ export default function RootLayout({
           </body>
         </html>
       </ClerkProvider>
-      */}
     </>
   );
 }
