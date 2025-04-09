@@ -11,8 +11,8 @@ export default function Home() {
       </SignedIn>
 
       <SignedOut>
-        <div className="flex justify-center items-center min-h-[calc(100vh-35rem)]">
-          <SignIn />
+        <div>
+          <SignIn routing="hash" />
         </div>
       </SignedOut>
     </>

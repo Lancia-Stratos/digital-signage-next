@@ -10,7 +10,6 @@ export default function SignedInLayout({
   return (
     <>
       <SidebarProvider>
-
         <AppSidebar />
         <main>
           <SidebarTrigger />

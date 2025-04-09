@@ -8,16 +8,13 @@ export default function SignedInLayout({
   children: React.ReactNode
 }) {
   return (
-    <>
-      <SidebarProvider>
+        <SidebarProvider>
+              <AppSidebar />
+              <main>
+                <SidebarTrigger />
+              </main>
+            </SidebarProvider>
+    <body>{children}</body>
 
-        <AppSidebar />
-        <main>
-          <SidebarTrigger />
-          {children}
-        </main>
-
-      </SidebarProvider>
-
-    </>)
+  )
 }

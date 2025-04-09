@@ -8,13 +8,11 @@ import {
   UserButton,
 } from '@clerk/nextjs'
 
-import { Button } from "@/components/ui/button"
-
-
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/app-sidebar"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,24 +39,12 @@ export default function RootLayout({
       <ClerkProvider>
         <html lang="ja">
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-            <header className="flex justify-end items-center p-4 gap-4 h-16">
-
-              <SignedOut>
-              </SignedOut>
-
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </header>
-            {children}
-          </body>
-        </html>
-      </ClerkProvider>
-
-      {/* <ClerkProvider>
-        <html lang="ja">
-          <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-    
+            <SidebarProvider>
+              <AppSidebar />
+              <main>
+                <SidebarTrigger />
+              </main>
+            </SidebarProvider>
             <header className="flex justify-end items-center p-4 gap-4 h-16">
               <SignedOut>
                 <SignInButton />
@@ -74,7 +60,7 @@ export default function RootLayout({
             </div>
           </body>
         </html>
-      </ClerkProvider> */}
+      </ClerkProvider>
 
       {/*
       <ClerkProvider>

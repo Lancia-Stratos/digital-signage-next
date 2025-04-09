@@ -1,20 +1,18 @@
 import type { Metadata } from "next";
 import {
   ClerkProvider,
-  SignInButton,
-  SignUpButton,
   SignedIn,
-  SignedOut,
   UserButton,
 } from '@clerk/nextjs'
 
-import { Button } from "@/components/ui/button"
-
+import TopTitle from "./components/TopTitle";
+import TopMenu from "./components/TopMenu";
 
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar"
+import { AppSidebar } from "@/components/app-sidebar"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,40 +39,20 @@ export default function RootLayout({
       <ClerkProvider>
         <html lang="ja">
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-            <header className="flex justify-end items-center p-4 gap-4 h-16">
+            <SidebarProvider>
+              <AppSidebar />
+              <main>
+                <SidebarTrigger />
+              </main>
+            </SidebarProvider>
 
-              <SignedOut>
-              </SignedOut>
-
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </header>
-            {children}
-          </body>
-        </html>
-      </ClerkProvider>
-
-      {/* <ClerkProvider>
-        <html lang="ja">
-          <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-    
-            <header className="flex justify-end items-center p-4 gap-4 h-16">
-              <SignedOut>
-                <SignInButton />
-                <SignUpButton />
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </header>
 
             <div className="mx-8">
               {children}
             </div>
           </body>
         </html>
-      </ClerkProvider> */}
+      </ClerkProvider>
 
       {/*
       <ClerkProvider>
