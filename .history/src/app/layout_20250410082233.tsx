@@ -36,8 +36,8 @@ export default function RootLayout({
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
             <header className="mt-2">
 
-              <SignedOut>
-                <div className="mt-10 text-8xl font-bold text-center mb-20">
+              <SignedOut className="mt-10">
+                <div className="text-8xl font-bold text-center mb-20">
                   <p>Digital Signage</p>
                   <p>System</p>
                 </div>

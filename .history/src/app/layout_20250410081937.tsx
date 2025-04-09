@@ -34,13 +34,10 @@ export default function RootLayout({
       <ClerkProvider>
         <html lang="ja">
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-            <header className="mt-2">
+            <header className="mt-20">
 
               <SignedOut>
-                <div className="mt-10 text-8xl font-bold text-center mb-20">
-                  <p>Digital Signage</p>
-                  <p>System</p>
-                </div>
+                <div className="text-4xl font-bold text-center mb-20">デジタルサイネージシステム</div>
               </SignedOut>
 
 

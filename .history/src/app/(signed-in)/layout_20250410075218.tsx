@@ -13,8 +13,7 @@ export default function SignedInLayout({
 
         <AppSidebar />
         <main>
-          <SidebarTrigger />
-          {/* このchildrenは、localhost:3000/ のページ */}
+          {/* <SidebarTrigger /> */}
           {children}
         </main>
 

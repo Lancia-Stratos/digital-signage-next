@@ -64,19 +64,19 @@ export function AppSidebar() {
                             ))}
 
                         </SidebarMenu>
-
+                        <SidebarFooter>
+                            <SignedIn>
+                                <UserButton />
+                            </SignedIn>
+                        </SidebarFooter>
                     </SidebarGroupContent>
                 </SidebarGroup>
 
                 {/* ログインしている時はユーザーアイコンを表示 */}
-
-                <div className="mt-auto ml-2 mb-20">
-                    <SidebarFooter>
-                        <SignedIn>
-                            <UserButton />
-                        </SignedIn>
-                    </SidebarFooter>
-
+                <div className="mt-auto ml-4 mb-20">
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
                 </div>
 
             </SidebarContent>

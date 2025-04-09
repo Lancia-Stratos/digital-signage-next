@@ -1,5 +1,5 @@
 import { Calendar, Home, Inbox, Search, Settings } from "lucide-react"
-import { SignedIn, UserButton } from "@clerk/nextjs"
+
 import {
     Sidebar,
     SidebarContent,
@@ -9,19 +9,18 @@ import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
-    SidebarFooter
 } from "@/components/ui/sidebar"
 
 // Menu items.
 const items = [
     {
         title: "Home",
-        url: "/",
+        url: "#",
         icon: Home,
     },
     {
-        title: "単位",
-        url: "/unit",
+        title: "Inbox",
+        url: "#",
         icon: Inbox,
     },
     {
@@ -47,11 +46,8 @@ export function AppSidebar() {
             <SidebarContent>
                 <SidebarGroup>
                     <SidebarGroupLabel>Application</SidebarGroupLabel>
-                    <SidebarGroupContent>
-
-
-
-                        <SidebarMenu className="">
+                    <SidebarGroupContent className="flex flex-col h-full">
+                        <SidebarMenu className="mt-auto">
                             {items.map((item) => (
                                 <SidebarMenuItem key={item.title}>
                                     <SidebarMenuButton asChild>
@@ -62,23 +58,13 @@ export function AppSidebar() {
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
-
+                            <div className="mt-auto">
+                                a
+                                {/* <SignOutButton /> */}
+                            </div>
                         </SidebarMenu>
-
                     </SidebarGroupContent>
                 </SidebarGroup>
-
-                {/* ログインしている時はユーザーアイコンを表示 */}
-
-                <div className="mt-auto ml-2 mb-20">
-                    <SidebarFooter>
-                        <SignedIn>
-                            <UserButton />
-                        </SignedIn>
-                    </SidebarFooter>
-
-                </div>
-
             </SidebarContent>
         </Sidebar>
     )

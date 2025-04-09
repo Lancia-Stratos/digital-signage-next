@@ -70,13 +70,15 @@ export function AppSidebar() {
 
                 {/* ログインしている時はユーザーアイコンを表示 */}
 
-                <div className="mt-auto ml-2 mb-20">
+                <div className="mt-auto ml-4 mb-20">
                     <SidebarFooter>
                         <SignedIn>
                             <UserButton />
                         </SignedIn>
                     </SidebarFooter>
-
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
                 </div>
 
             </SidebarContent>

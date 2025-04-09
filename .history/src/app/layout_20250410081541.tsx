@@ -34,13 +34,9 @@ export default function RootLayout({
       <ClerkProvider>
         <html lang="ja">
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-            <header className="mt-2">
+            <header className="flex justify-end items-center p-4 gap-4 h-16">
 
               <SignedOut>
-                <div className="mt-10 text-8xl font-bold text-center mb-20">
-                  <p>Digital Signage</p>
-                  <p>System</p>
-                </div>
               </SignedOut>
 
 

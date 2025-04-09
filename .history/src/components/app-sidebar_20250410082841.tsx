@@ -48,35 +48,34 @@ export function AppSidebar() {
                 <SidebarGroup>
                     <SidebarGroupLabel>Application</SidebarGroupLabel>
                     <SidebarGroupContent>
+                        <SidebarFooter>
+                            <SignedIn>
+                                <UserButton />
+                            </SignedIn>
 
 
+                            <SidebarMenu className="">
+                                {items.map((item) => (
+                                    <SidebarMenuItem key={item.title}>
+                                        <SidebarMenuButton asChild>
+                                            <a href={item.url}>
+                                                <item.icon />
+                                                <span>{item.title}</span>
+                                            </a>
+                                        </SidebarMenuButton>
+                                    </SidebarMenuItem>
+                                ))}
 
-                        <SidebarMenu className="">
-                            {items.map((item) => (
-                                <SidebarMenuItem key={item.title}>
-                                    <SidebarMenuButton asChild>
-                                        <a href={item.url}>
-                                            <item.icon />
-                                            <span>{item.title}</span>
-                                        </a>
-                                    </SidebarMenuButton>
-                                </SidebarMenuItem>
-                            ))}
-
-                        </SidebarMenu>
-
+                            </SidebarMenu>
+                        </SidebarFooter>
                     </SidebarGroupContent>
                 </SidebarGroup>
 
                 {/* ログインしている時はユーザーアイコンを表示 */}
-
-                <div className="mt-auto ml-2 mb-20">
-                    <SidebarFooter>
-                        <SignedIn>
-                            <UserButton />
-                        </SignedIn>
-                    </SidebarFooter>
-
+                <div className="mt-auto ml-4 mb-20">
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
                 </div>
 
             </SidebarContent>

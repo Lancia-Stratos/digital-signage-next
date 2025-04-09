@@ -9,19 +9,18 @@ import {
     SidebarMenu,
     SidebarMenuButton,
     SidebarMenuItem,
-    SidebarFooter
 } from "@/components/ui/sidebar"
 
 // Menu items.
 const items = [
     {
         title: "Home",
-        url: "/",
+        url: "#",
         icon: Home,
     },
     {
-        title: "単位",
-        url: "/unit",
+        title: "Inbox",
+        url: "#",
         icon: Inbox,
     },
     {
@@ -48,9 +47,6 @@ export function AppSidebar() {
                 <SidebarGroup>
                     <SidebarGroupLabel>Application</SidebarGroupLabel>
                     <SidebarGroupContent>
-
-
-
                         <SidebarMenu className="">
                             {items.map((item) => (
                                 <SidebarMenuItem key={item.title}>
@@ -64,19 +60,14 @@ export function AppSidebar() {
                             ))}
 
                         </SidebarMenu>
-
                     </SidebarGroupContent>
                 </SidebarGroup>
 
                 {/* ログインしている時はユーザーアイコンを表示 */}
-
-                <div className="mt-auto ml-2 mb-20">
-                    <SidebarFooter>
-                        <SignedIn>
-                            <UserButton />
-                        </SignedIn>
-                    </SidebarFooter>
-
+                <div className="mt-auto ml-4 mb-12">
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
                 </div>
 
             </SidebarContent>
