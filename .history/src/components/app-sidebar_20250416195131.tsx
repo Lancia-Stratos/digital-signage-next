@@ -63,7 +63,7 @@ export function AppSidebar() {
                     </div>
                 </SidebarHeader>
 
-                <SidebarSeparator />
+                <SidebarSeparator className="mx-2" />
 
                 <SidebarGroup>
                     <SidebarGroupContent>

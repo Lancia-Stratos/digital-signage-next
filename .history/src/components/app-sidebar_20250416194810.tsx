@@ -12,7 +12,6 @@ import {
     SidebarMenuItem,
     SidebarFooter,
     SidebarTrigger,
-    SidebarSeparator,
 } from "@/components/ui/sidebar"
 import { metadata } from "@/app/layout"
 // Menu items.
@@ -62,8 +61,6 @@ export function AppSidebar() {
                         <p className="text-[13px] group-data-[collapsible=icon]:hidden">Sidebar</p>
                     </div>
                 </SidebarHeader>
-
-                <SidebarSeparator />
 
                 <SidebarGroup>
                     <SidebarGroupContent>

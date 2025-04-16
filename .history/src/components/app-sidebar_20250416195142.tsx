@@ -63,7 +63,7 @@ export function AppSidebar() {
                     </div>
                 </SidebarHeader>
 
-                <SidebarSeparator />
+                <SidebarSeparator className="px-4" />
 
                 <SidebarGroup>
                     <SidebarGroupContent>

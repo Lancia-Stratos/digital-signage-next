@@ -63,6 +63,7 @@ export function AppSidebar() {
                     </div>
                 </SidebarHeader>
 
+                {/* サイドバーの区切り線*/}
                 <SidebarSeparator />
 
                 <SidebarGroup>

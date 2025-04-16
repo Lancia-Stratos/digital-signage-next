@@ -12,7 +12,6 @@ import {
     SidebarMenuItem,
     SidebarFooter,
     SidebarTrigger,
-    SidebarSeparator,
 } from "@/components/ui/sidebar"
 import { metadata } from "@/app/layout"
 // Menu items.
@@ -59,11 +58,9 @@ export function AppSidebar() {
                     {/* サイドバーの開閉ボタン*/}
                     <div className="flex items-center">
                         <SidebarTrigger />
-                        <p className="text-[13px] group-data-[collapsible=icon]:hidden">Sidebar</p>
+                        <p className="text-[12px] group-data-[collapsible=icon]:hidden">Sidebar</p>
                     </div>
                 </SidebarHeader>
-
-                <SidebarSeparator />
 
                 <SidebarGroup>
                     <SidebarGroupContent>

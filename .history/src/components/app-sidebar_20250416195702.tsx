@@ -47,12 +47,12 @@ const items = [
 export function AppSidebar() {
 
     return (
-        <Sidebar collapsible="icon">
+        <Sidebar collapsible="icon" className="ml-0.5">
             <SidebarContent>
 
-                <SidebarHeader className="ml-0.5">
+                <SidebarHeader className="">
                     {/* サイドバーのタイトル*/}
-                    <SidebarGroupLabel>
+                    <SidebarGroupLabel className="group-data-[collapsible=icon]:hidden transition-opacity duration-300 opacity-100 group-data-[collapsible=icon]:opacity-0 group-data-[collapsible=expanded]:opacity-100">
                         {String(metadata.title)}
                     </SidebarGroupLabel>
 
@@ -63,6 +63,7 @@ export function AppSidebar() {
                     </div>
                 </SidebarHeader>
 
+                {/* サイドバーの区切り線*/}
                 <SidebarSeparator />
 
                 <SidebarGroup>
