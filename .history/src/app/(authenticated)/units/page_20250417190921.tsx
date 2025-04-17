@@ -15,7 +15,8 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { UnitAddButton } from "./components/unitAddButton"
-import { prisma } from "@/lib/prisma"
+import { PrismaClient } from "@prisma/client"
+const prisma = new PrismaClient()
 
 export default async function UnitPage() {
     const units = await prisma.unit.findMany()

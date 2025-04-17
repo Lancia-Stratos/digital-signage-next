@@ -23,12 +23,11 @@ export default async function Layout({ children }: { children: React.ReactNode }
         "--sidebar-width": "11rem",
         "--sidebar-width-mobile": "11rem"
       } as CSSProperties & CustomProperties}
-      className="flex h-screen overflow-hidden"
     >
 
       {/* サイドバーのコンテナ */}
       <AppSidebar />
-      <main className="flex-1 overflow-x-hidden">
+      <main className="w-full h-full">
 
         <div className="bg-gray-100 min-h-screen w-full">
           {/* このchildrenは、localhost:3000/(signed-in)/page.tsx のページ */}

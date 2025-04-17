@@ -7,8 +7,3 @@ const globalForPrisma = globalThis as unknown as {
 export const prisma = globalForPrisma.prisma ?? new PrismaClient();
 // 開発環境でのみ使用
 if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
-
-// アプリケーション終了時に接続を切断
-process.on("beforeExit", async () => {
-  await prisma.$disconnect();
-});

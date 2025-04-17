@@ -23,7 +23,6 @@ export default async function Layout({ children }: { children: React.ReactNode }
         "--sidebar-width": "11rem",
         "--sidebar-width-mobile": "11rem"
       } as CSSProperties & CustomProperties}
-      className="flex h-screen overflow-hidden"
     >
 
       {/* サイドバーのコンテナ */}
