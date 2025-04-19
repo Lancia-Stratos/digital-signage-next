@@ -86,7 +86,7 @@ export function AppSidebar() {
                 {/* ログインしている時はユーザーアイコンを表示 */}
                 <div className="mt-auto">
                     <SidebarFooter>
-                        <div className="mt-auto mb-20 flex w-full group-data-[collapsible=icon]:justify-center group-data-[state=expanded]:ml-2">
+                        <div className="group-data-[collapsible=icon]:items-center mt-auto ml-1 mb-20 flex  w-full">
                             <SignedIn>
                                 <UserButton />
                             </SignedIn>
