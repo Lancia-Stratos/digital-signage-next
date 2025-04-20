@@ -4,7 +4,7 @@
 generator zod {
   provider         = "zod-prisma-types"
   // 自動生成されたファイルが配置されるパス
-  output           = "../src/schemas/zod"
+  output           = "../src/schema/zod"
   // ファイル分割の定義
   // useMultipleFiles                 = true // default is false
   createInputTypes = false // default is true

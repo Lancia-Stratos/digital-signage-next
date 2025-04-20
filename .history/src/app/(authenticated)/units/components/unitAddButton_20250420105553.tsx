@@ -36,7 +36,7 @@ export function UnitAddButton() {
                             </Label>
                             <Input
                                 id="name"
-                                defaultValue=""
+                                defaultValue="Pedro Duarte"
                                 className="col-span-3"
                             />
                         </div>

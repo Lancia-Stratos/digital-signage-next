@@ -36,14 +36,14 @@ export function UnitAddButton() {
                             </Label>
                             <Input
                                 id="name"
-                                defaultValue=""
+                                defaultValue="Pedro Duarte"
                                 className="col-span-3"
                             />
                         </div>
 
                     </div>
                     <DialogFooter>
-                        <Button type="submit">保存</Button>
+                        <Button type="submit">Save changes</Button>
                     </DialogFooter>
                 </DialogContent>
             </Dialog>
