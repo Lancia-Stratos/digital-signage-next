@@ -16,10 +16,9 @@ import {
 } from "@/components/ui/card"
 import { UnitAddButton } from "./components/unitAddButton"
 import { prisma } from "@/lib/prisma"
-import { type Unit } from '@/schemas/zod'
 
 export default async function UnitPage() {
-    const units: Unit[] = await prisma.unit.findMany()
+    const units = await prisma.unit.findMany()
     console.log(units)
     return (
         <>

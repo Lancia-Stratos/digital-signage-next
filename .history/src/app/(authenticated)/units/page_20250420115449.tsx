@@ -16,10 +16,9 @@ import {
 } from "@/components/ui/card"
 import { UnitAddButton } from "./components/unitAddButton"
 import { prisma } from "@/lib/prisma"
-import { type Unit } from '@/schemas/zod'
 
 export default async function UnitPage() {
-    const units: Unit[] = await prisma.unit.findMany()
+    const units = await prisma.unit.findMany()
     console.log(units)
     return (
         <>
@@ -51,7 +50,10 @@ export default async function UnitPage() {
                                     </TableRow>
                                 ))}
                             </TableBody>
-
+                            import {UnitSchema} from "@/schemas/zod"
+                            import {useForm} from "react-hook-form"
+                            import {zodResolver} from "@hookform/resolvers/zod"
+                            import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form"
 
                         </Table>
 

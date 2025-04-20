@@ -16,10 +16,9 @@ import {
 } from "@/components/ui/card"
 import { UnitAddButton } from "./components/unitAddButton"
 import { prisma } from "@/lib/prisma"
-import { type Unit } from '@/schemas/zod'
 
 export default async function UnitPage() {
-    const units: Unit[] = await prisma.unit.findMany()
+    const units = await prisma.unit.findMany()
     console.log(units)
     return (
         <>
@@ -44,7 +43,7 @@ export default async function UnitPage() {
                                     <TableRow key={unit.id}>
                                         <TableCell>{unit.id}</TableCell>
                                         <TableCell>{unit.name}</TableCell>
-                                        <TableCell>{new Date(unit.createdAt).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '/')}
+                                        <TableCell>{neew Date(unit.createdAt).toLocaleDateString('ja-JP', {year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '/')}
                                         </TableCell>
                                         <TableCell>{new Date(unit.updatedAt).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '/')}
                                         </TableCell>
