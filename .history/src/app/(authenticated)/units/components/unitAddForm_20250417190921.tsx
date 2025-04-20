@@ -30,7 +30,10 @@ export function UnitAddForm() {
 
                             <TableHeader>
                                 <TableRow>
+                                    <TableHead>ID</TableHead>
                                     <TableHead>単位名</TableHead>
+                                    <TableHead>作成日</TableHead>
+                                    <TableHead>更新日</TableHead>
                                 </TableRow>
                             </TableHeader>
 
@@ -44,7 +47,7 @@ export function UnitAddForm() {
                     </CardContent>
 
                     <CardFooter className="flex justify-end">
-
+                        ボタン
                     </CardFooter>
                 </CardHeader>
             </Card>

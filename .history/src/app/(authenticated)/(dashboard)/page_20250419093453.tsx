@@ -1,4 +1,4 @@
-import { SignedOut } from "@clerk/nextjs";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { SignIn } from "@clerk/nextjs";
 
 export default function Dashboard() {

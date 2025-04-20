@@ -33,7 +33,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
         <div className="bg-gray-100 min-h-screen w-full">
           {/* このchildrenは、localhost:3000/(signed-in)/page.tsx のページ */}
           <div className="mx-2">
-            <div className="pt-2">
+            <div className="pt-3">
               {children}
             </div>
           </div>

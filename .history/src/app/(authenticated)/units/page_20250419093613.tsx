@@ -12,7 +12,7 @@ import {
     CardContent,
     CardFooter,
     CardHeader,
-    // CardTitle,
+    CardTitle,
 } from "@/components/ui/card"
 import { UnitAddButton } from "./components/unitAddButton"
 import { prisma } from "@/lib/prisma"
@@ -25,7 +25,7 @@ export default async function UnitPage() {
             <h1 className="text-2xl font-bold">単位管理</h1>
             <Card className="">
                 <CardHeader>
-                    {/* <CardTitle>単位管理</CardTitle> */}
+                    <CardTitle>単位管理</CardTitle>
                     <CardContent>
 
                         <Table>

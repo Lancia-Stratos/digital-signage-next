@@ -44,7 +44,7 @@ export function UnitAddForm() {
                     </CardContent>
 
                     <CardFooter className="flex justify-end">
-
+                        ボタン
                     </CardFooter>
                 </CardHeader>
             </Card>
