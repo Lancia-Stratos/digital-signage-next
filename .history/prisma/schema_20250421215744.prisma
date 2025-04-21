@@ -2,14 +2,14 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator zod {
-  provider               = "zod-prisma-types"
+  provider         = "zod-prisma-types"
   // 自動生成されたファイルが配置されるパス
-  output                 = "../src/schemas/zod"
+  output           = "../src/schemas/zod"
   // ファイル分割の定義
   // useMultipleFiles                 = true // default is false
-  createInputTypes       = true // default is true
-  createModelTypes       = true // default is true
-  addInputTypeValidation = true // default is true
+  createInputTypes = true // default is true
+  createModelTypes = true // default is true
+  // addInputTypeValidation           = false // default is true
   // addIncludeType                   = false // default is true
   // addSelectType                    = false // default is true
   // validateWhereUniqueInput         = true // default is false
