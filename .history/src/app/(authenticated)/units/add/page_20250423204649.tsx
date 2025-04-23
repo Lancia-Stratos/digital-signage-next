@@ -1,12 +1,9 @@
-'use client'
-
 import Form from 'next/form'
 import { createUnit } from '@/lib/actions/createUnit'
-import { UnitSchema } from '@/validations/unit'
-import { useState } from 'react'
+import { useFormState } from 'react-dom'
 
 export default function UnitAddPage() {
-    const [error, setError] = useState<string | null>(null);
+    const [state, formAction] = useFormState(createUnit, null);
 
     return (
         <div>
@@ -14,29 +11,13 @@ export default function UnitAddPage() {
             {/* https://ui.shadcn.com/docs/components/form */}
 
             <h1>単位追加フォームテストページ</h1>
-            <div className="pt-4">
-
-                <Form action={async (formData: FormData) => {
-                    try {
-                        // バリデーションを実行
-                        const validationResult = UnitSchema.safeParse({
-                            name: formData.get('name'),
-                        });
-
-                        if (!validationResult.success) {
-                            // バリデーションエラーの場合
-                            setError(validationResult.error.errors[0].message);
-                            return;
-                        }
-
-                        // エラーをクリア
-                        setError(null);
-                        await createUnit(formData);
-                    } catch (error) {
-                        console.error(error);
-                        setError('予期せぬエラーが発生しました');
-                    }
-                }}>
+            <div className="pt-10">
+                <Form action={formAction}>
+                    {state?.error && (
+                        <div className="mb-4 p-4 text-red-700 bg-red-100 rounded-md">
+                            {state.error}
+                        </div>
+                    )}
                     <div className="space-y-4">
                         <div className="flex flex-col space-y-2">
                             <label htmlFor="name" className="text-sm font-medium">
@@ -49,11 +30,6 @@ export default function UnitAddPage() {
                                 className="rounded-md border border-gray-300 px-3 py-2"
                                 required
                             />
-                            {error && (
-                                <p className="text-sm text-red-600">
-                                    {error}
-                                </p>
-                            )}
                         </div>
 
                         <button

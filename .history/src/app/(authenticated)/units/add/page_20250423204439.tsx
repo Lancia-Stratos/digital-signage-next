@@ -1,42 +1,17 @@
-'use client'
-
 import Form from 'next/form'
 import { createUnit } from '@/lib/actions/createUnit'
-import { UnitSchema } from '@/validations/unit'
-import { useState } from 'react'
 
 export default function UnitAddPage() {
-    const [error, setError] = useState<string | null>(null);
-
     return (
         <div>
             {/* shadcn/uiのフォームを使用して単位追加フォームを作成 */}
             {/* https://ui.shadcn.com/docs/components/form */}
 
             <h1>単位追加フォームテストページ</h1>
-            <div className="pt-4">
+            <div className="pt-10">
 
-                <Form action={async (formData: FormData) => {
-                    try {
-                        // バリデーションを実行
-                        const validationResult = UnitSchema.safeParse({
-                            name: formData.get('name'),
-                        });
+                <Form action={createUnit} >
 
-                        if (!validationResult.success) {
-                            // バリデーションエラーの場合
-                            setError(validationResult.error.errors[0].message);
-                            return;
-                        }
-
-                        // エラーをクリア
-                        setError(null);
-                        await createUnit(formData);
-                    } catch (error) {
-                        console.error(error);
-                        setError('予期せぬエラーが発生しました');
-                    }
-                }}>
                     <div className="space-y-4">
                         <div className="flex flex-col space-y-2">
                             <label htmlFor="name" className="text-sm font-medium">
@@ -49,11 +24,6 @@ export default function UnitAddPage() {
                                 className="rounded-md border border-gray-300 px-3 py-2"
                                 required
                             />
-                            {error && (
-                                <p className="text-sm text-red-600">
-                                    {error}
-                                </p>
-                            )}
                         </div>
 
                         <button
@@ -63,6 +33,8 @@ export default function UnitAddPage() {
                             保存
                         </button>
                     </div>
+
+
                 </Form>
             </div>
         </div>

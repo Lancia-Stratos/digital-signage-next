@@ -2,12 +2,8 @@
 
 import Form from 'next/form'
 import { createUnit } from '@/lib/actions/createUnit'
-import { UnitSchema } from '@/validations/unit'
-import { useState } from 'react'
 
 export default function UnitAddPage() {
-    const [error, setError] = useState<string | null>(null);
-
     return (
         <div>
             {/* shadcn/uiのフォームを使用して単位追加フォームを作成 */}
@@ -15,26 +11,12 @@ export default function UnitAddPage() {
 
             <h1>単位追加フォームテストページ</h1>
             <div className="pt-4">
-
                 <Form action={async (formData: FormData) => {
                     try {
-                        // バリデーションを実行
-                        const validationResult = UnitSchema.safeParse({
-                            name: formData.get('name'),
-                        });
-
-                        if (!validationResult.success) {
-                            // バリデーションエラーの場合
-                            setError(validationResult.error.errors[0].message);
-                            return;
-                        }
-
-                        // エラーをクリア
-                        setError(null);
                         await createUnit(formData);
                     } catch (error) {
+                        // エラーメッセージを表示する処理をここに追加
                         console.error(error);
-                        setError('予期せぬエラーが発生しました');
                     }
                 }}>
                     <div className="space-y-4">
@@ -49,11 +31,6 @@ export default function UnitAddPage() {
                                 className="rounded-md border border-gray-300 px-3 py-2"
                                 required
                             />
-                            {error && (
-                                <p className="text-sm text-red-600">
-                                    {error}
-                                </p>
-                            )}
                         </div>
 
                         <button
