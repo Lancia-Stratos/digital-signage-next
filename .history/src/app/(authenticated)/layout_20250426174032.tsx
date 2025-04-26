@@ -20,8 +20,8 @@ export default async function Layout({ children }: { children: React.ReactNode }
       defaultOpen={defaultOpen}
       style={{
         //サイドバーの幅を設定
-        "--sidebar-width": "11.5rem",
-        "--sidebar-width-mobile": "11.5rem"
+        "--sidebar-width": "12rem",
+        "--sidebar-width-mobile": "11rem"
       } as CSSProperties & CustomProperties}
       className="flex h-screen overflow-hidden"
     >

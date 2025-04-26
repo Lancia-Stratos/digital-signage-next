@@ -28,8 +28,8 @@ const items = [
         icon: Ruler,
     },
     {
-        title: "単位保存テスト",
-        url: "/units/add",
+        title: "Calendar",
+        url: "#",
         icon: Calendar,
     },
     {

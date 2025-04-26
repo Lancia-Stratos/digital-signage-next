@@ -28,8 +28,8 @@ const items = [
         icon: Ruler,
     },
     {
-        title: "単位保存テスト",
-        url: "/units/add",
+        title: "Calendar",
+        url: "#",
         icon: Calendar,
     },
     {
@@ -50,13 +50,24 @@ export function AppSidebar() {
         <Sidebar collapsible="icon">
             <SidebarContent>
 
-                <SidebarHeader className="ml-0.5">
+                <SidebarHeader>
+
+                    {/* サイドバーのタイトル
+                    <SidebarGroupLabel>
+                        {String(metadata.title)}
+                    </SidebarGroupLabel>
+
+                    サイドバーの開閉ボタン
+                    <div className="flex items-center">
+                        <SidebarTrigger />
+                        <p className="text-[13px] group-data-[collapsible=icon]:hidden">Sidebar</p>
+                    </div> */}
 
                     <div className="flex items-center">
                         {/* サイドバーの開閉ボタン */}
                         <SidebarTrigger />
                         {/* サイドバーのタイトル */}
-                        <SidebarGroupLabel className="!ml-0.5 !pl-0">
+                        <SidebarGroupLabel>
                             {String(metadata.title)}
                         </SidebarGroupLabel>
                     </div>
