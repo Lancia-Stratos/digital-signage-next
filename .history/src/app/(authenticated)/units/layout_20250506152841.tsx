@@ -2,7 +2,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
     return (
         <div>
-            <h1 className="text-2xl font-bold mb-1.5 ml-0.5">単位管理</h1>
+            <div className="flex items-center">
+                <h1 className="text-2xl font-bold">単位管理</h1>
+
+            </div>
             {children}
         </div>
     );

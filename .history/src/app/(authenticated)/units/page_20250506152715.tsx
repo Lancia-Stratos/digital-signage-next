@@ -1,3 +1,5 @@
+'use client'
+
 import {
     Table,
     TableBody,
@@ -17,14 +19,19 @@ import {
 import { UnitAddButton } from "./components/unitAddButton"
 import { prisma } from "@/lib/prisma"
 import { type Unit } from '@/schemas/zod'
-
+import { useEffect } from "react"
 export default async function UnitPage() {
     const units: Unit[] = await prisma.unit.findMany()
     console.log(units)
     return (
         <>
-            <meta httpEquiv="refresh" content="3600" />
+                useEffect(() => {
+        const interval = setInterval(() => {
+                window.location.reload();
+        }, 3600000); // 1時間 = 3600000ミリ秒
 
+        return () => clearInterval(interval);
+    }, []);
             <Card className="">
                 <CardHeader>
                     {/* <CardTitle>単位管理</CardTitle> */}
@@ -64,10 +71,6 @@ export default async function UnitPage() {
                     </CardFooter>
                 </CardHeader>
             </Card>
-
-            <p className="text-sm text-gray-500 text-right mt-4">
-                最終更新: {new Date().toLocaleString('ja-JP')}
-            </p>
         </>
     );
 }

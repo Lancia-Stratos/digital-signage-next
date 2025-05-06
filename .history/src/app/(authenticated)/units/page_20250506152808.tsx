@@ -64,10 +64,6 @@ export default async function UnitPage() {
                     </CardFooter>
                 </CardHeader>
             </Card>
-
-            <p className="text-sm text-gray-500 text-right mt-4">
-                最終更新: {new Date().toLocaleString('ja-JP')}
-            </p>
         </>
     );
 }
