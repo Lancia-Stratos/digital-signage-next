@@ -13,9 +13,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
     return (
         <div>
-            <div className="flex items-center">
+            <div className="flex items-center gap-4">
                 <h1 className="text-2xl font-bold">単位管理</h1>
-                <p className="text-sm text-gray-500 ml-auto mr-1">
+                <p className="text-sm text-gray-500 ml-auto">
                     最終更新: {new Date().toLocaleString('ja-JP')}
                 </p>
             </div>
