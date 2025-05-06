@@ -34,7 +34,7 @@ export default function UnitAddPage() {
                         await createUnit(formData);
                     } catch (error) {
                         console.error(error);
-                        // setError('予期せぬエラーが発生しました');
+                        setError('予期せぬエラーが発生しました');
                     }
                 }}>
                     <div className="space-y-4">

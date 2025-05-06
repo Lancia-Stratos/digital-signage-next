@@ -4,9 +4,12 @@ import Form from 'next/form'
 import { createUnit } from '@/lib/actions/createUnit'
 import { UnitSchema } from '@/validations/unit'
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 export default function UnitAddPage() {
     const [error, setError] = useState<string | null>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const router = useRouter();
 
     return (
         <div>
@@ -18,6 +21,7 @@ export default function UnitAddPage() {
 
                 <Form action={async (formData: FormData) => {
                     try {
+                        setIsSubmitting(true);
                         // バリデーションを実行
                         const validationResult = UnitSchema.safeParse({
                             name: formData.get('name'),
@@ -26,15 +30,26 @@ export default function UnitAddPage() {
                         if (!validationResult.success) {
                             // バリデーションエラーの場合
                             setError(validationResult.error.errors[0].message);
+                            setIsSubmitting(false);
                             return;
                         }
 
                         // エラーをクリア
                         setError(null);
+
+                        // フォーム送信前にエラーメッセージをクリア
+                        setError(null);
                         await createUnit(formData);
+                        router.push('/units');
                     } catch (error) {
                         console.error(error);
-                        // setError('予期せぬエラーが発生しました');
+                        // エラーが発生した場合のみエラーメッセージを表示
+                        if (error instanceof Error) {
+                            setError(error.message);
+                        } else {
+                            setError('予期せぬエラーが発生しました');
+                        }
+                        setIsSubmitting(false);
                     }
                 }}>
                     <div className="space-y-4">
@@ -48,6 +63,7 @@ export default function UnitAddPage() {
                                 name="name"
                                 className="rounded-md border border-gray-300 px-3 py-2"
                                 required
+                                disabled={isSubmitting}
                             />
                             {error && (
                                 <p className="text-sm text-red-600">
@@ -58,9 +74,10 @@ export default function UnitAddPage() {
 
                         <button
                             type="submit"
-                            className="rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+                            className="rounded-md bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                            disabled={isSubmitting}
                         >
-                            保存
+                            {isSubmitting ? '保存中...' : '保存'}
                         </button>
                     </div>
                 </Form>

@@ -31,10 +31,18 @@ export default function UnitAddPage() {
 
                         // エラーをクリア
                         setError(null);
+
+                        // フォーム送信前にエラーメッセージをクリア
+                        setError(null);
                         await createUnit(formData);
                     } catch (error) {
                         console.error(error);
-                        // setError('予期せぬエラーが発生しました');
+                        // エラーが発生した場合のみエラーメッセージを表示
+                        if (error instanceof Error) {
+                            setError(error.message);
+                        } else {
+                            setError('予期せぬエラーが発生しました');
+                        }
                     }
                 }}>
                     <div className="space-y-4">
