@@ -29,7 +29,7 @@ const items = [
     },
     {
         title: "単位保存テスト",
-        url: "/units/addTest",
+        url: "/units/hooksTest2",
         icon: Calendar,
     },
     {

@@ -2,10 +2,10 @@
 
 import { prisma } from "@/lib/prisma";
 import { redirect } from "next/navigation";
-import { UnitSchema, Unit } from "@/validations/unit";
+import { UnitSchema } from "@/validations/unit";
 
-export async function createUnit(data: Unit) {
-  const name = data.name;
+export async function createUnit(formData: FormData) {
+  const name = formData.get("name");
 
   const validatedFields = UnitSchema.safeParse({ name });
 

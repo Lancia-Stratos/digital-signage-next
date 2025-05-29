@@ -1,0 +1,26 @@
+'use client';
+
+import { useForm } from 'react-hook-form';
+import { Unit, UnitSchema } from '@/validations/unit';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+
+
+export default function Page() {
+    const { register, handleSubmit, reset, formState } = useForm<Unit>({
+        resolver: zodResolver(UnitSchema),
+    });
+
+    const onSubmit = (data: Unit) => {
+        console.log(data);
+    };
+
+    return (
+        <form onSubmit={handleSubmit(onSubmit)}>
+            <input {...register('name')} placeholder="単位名" />
+            <button type="button" onClick={() => reset()}>Reset</button>
+            <button type="submit">Submit</button>
+            {formState.errors.firstName && <p>{formState.errors.firstName.message}</p>}
+        </form>
+    );
+}
