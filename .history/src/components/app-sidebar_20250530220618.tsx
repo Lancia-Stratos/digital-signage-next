@@ -48,7 +48,7 @@ export function AppSidebar() {
 
     return (
         <Sidebar collapsible="icon" className="h-full">
-            <SidebarContent className="h-full flex flex-col overflow-x-hidden">
+            <SidebarContent className="h-full flex flex-col">
 
                 <SidebarHeader className="ml-0.5">
                     <div className="flex items-center">

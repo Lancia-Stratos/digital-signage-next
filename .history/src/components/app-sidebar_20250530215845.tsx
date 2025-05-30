@@ -47,9 +47,8 @@ const items = [
 export function AppSidebar() {
 
     return (
-        <Sidebar collapsible="icon" className="h-full">
-            <SidebarContent className="h-full flex flex-col overflow-x-hidden">
-
+        <Sidebar collapsible="icon" className="h-screen">
+            <SidebarContent className="h-full flex flex-col">
                 <SidebarHeader className="ml-0.5">
                     <div className="flex items-center">
                         {/* サイドバーの開閉ボタン */}
@@ -65,7 +64,7 @@ export function AppSidebar() {
                 <SidebarSeparator />
 
                 <SidebarGroup>
-                    <SidebarGroupContent>
+                    <SidebarGroupContent className="flex-1 overflow-y-auto">
                         <SidebarMenu className="">
                             {/* メニューのアイテム*/}
                             {items.map((item) => (
@@ -82,16 +81,11 @@ export function AppSidebar() {
                     </SidebarGroupContent>
                 </SidebarGroup>
 
-                {/* ログインしている時はユーザーアイコンを表示 */}
-                <div className="mt-auto">
-                    <SidebarFooter>
-                        <div className="mt-auto mb-20 flex w-full group-data-[collapsible=icon]:justify-center group-data-[state=expanded]:ml-2">
-                            <SignedIn>
-                                <UserButton />
-                            </SignedIn>
-                        </div>
-                    </SidebarFooter>
-                </div>
+                <SidebarFooter className="mb-20">
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
+                </SidebarFooter>
             </SidebarContent >
         </Sidebar >
     )

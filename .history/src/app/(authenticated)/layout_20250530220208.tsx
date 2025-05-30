@@ -25,11 +25,46 @@ export default async function Layout({ children }: { children: React.ReactNode }
       } as CSSProperties & CustomProperties}
       className="flex h-screen overflow-hidden"
     >
-      <div className="h-full overflow-y-auto overflow-x-hidden">
-        <AppSidebar />
-      </div>
+
+      {/* サイドバーのコンテナ */}
+      <Sidebar collapsible="icon" className="h-screen">
+        <SidebarContent className="flex flex-col h-full">
+          <SidebarHeader className="ml-0.5">
+            <div className="flex items-center">
+              <SidebarTrigger />
+              <SidebarGroupLabel className="!ml-0.5 !pl-0">
+                {String(metadata.title)}
+              </SidebarGroupLabel>
+            </div>
+          </SidebarHeader>
+          <SidebarSeparator />
+          <SidebarGroup>
+            <SidebarGroupContent className="flex-1 overflow-y-auto">
+              <SidebarMenu>
+                {items.map((item) => (
+                  <SidebarMenuItem key={item.title}>
+                    <SidebarMenuButton asChild>
+                      <a href={item.url}>
+                        <item.icon />
+                        <span>{item.title}</span>
+                      </a>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
+              </SidebarMenu>
+            </SidebarGroupContent>
+          </SidebarGroup>
+          <SidebarFooter className="mb-4">
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </SidebarFooter>
+        </SidebarContent>
+      </Sidebar>
       <main className="flex-1 overflow-x-hidden">
+
         <div className="bg-gray-100 min-h-screen w-full">
+          {/* このchildrenは、localhost:3000/(signed-in)/page.tsx のページ */}
           <div className="mx-3">
             <div className="pt-3.5">
               {children}
@@ -37,6 +72,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
           </div>
         </div>
       </main>
+
     </SidebarProvider>
   )
 }

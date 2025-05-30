@@ -2,7 +2,6 @@
 
 import { prisma } from "@/lib/prisma";
 import { Unit } from "@/validations/unit";
-import { Prisma } from "@prisma/client";
 
 export async function createUnit(data: Unit) {
   const name = data.name;
@@ -13,11 +12,8 @@ export async function createUnit(data: Unit) {
       },
     });
     return { success: true };
-  } catch (error) {
-    if (
-      error instanceof Prisma.PrismaClientKnownRequestError &&
-      error.code === "P2002"
-    ) {
+  } catch (error: any) {
+    if (error.code === "P2002") {
       // ユニーク制約違反
       return { success: false, error: "duplicate" };
     }

@@ -58,7 +58,7 @@ export default async function UnitPage() {
                     </CardContent>
 
                     <CardFooter className="flex justify-end">
-                        <UnitAddDialog />
+                        <UnitAddForm />
                     </CardFooter>
                 </CardHeader>
             </Card>

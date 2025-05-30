@@ -25,19 +25,24 @@ export default async function Layout({ children }: { children: React.ReactNode }
       } as CSSProperties & CustomProperties}
       className="flex h-screen overflow-hidden"
     >
+
+      {/* サイドバーのコンテナ */}
       <div className="h-full overflow-y-auto overflow-x-hidden">
         <AppSidebar />
       </div>
-      <main className="flex-1 overflow-x-hidden">
-        <div className="bg-gray-100 min-h-screen w-full">
-          <div className="mx-3">
-            <div className="pt-3.5">
-              {children}
-            </div>
+      <main className="flex-1 overflow-x-hidden"></main>
+
+      <div className="bg-gray-100 min-h-screen w-full">
+        {/* このchildrenは、localhost:3000/(signed-in)/page.tsx のページ */}
+        <div className="mx-3">
+          <div className="pt-3.5">
+            {children}
           </div>
         </div>
-      </main>
-    </SidebarProvider>
+      </div>
+    </main>
+
+    </SidebarProvider >
   )
 }
 

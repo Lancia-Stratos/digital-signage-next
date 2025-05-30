@@ -47,11 +47,11 @@ const items = [
 export function AppSidebar() {
 
     return (
-        <Sidebar collapsible="icon" className="h-full">
-            <SidebarContent className="h-full flex flex-col overflow-x-hidden">
+        <Sidebar collapsible="icon">
+            <SidebarContent>
 
                 <SidebarHeader className="ml-0.5">
-                    <div className="flex items-center">
+                    <div className="flex items-center overflow-hidden">
                         {/* サイドバーの開閉ボタン */}
                         <SidebarTrigger />
                         {/* サイドバーのタイトル */}

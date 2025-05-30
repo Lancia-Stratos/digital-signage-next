@@ -1,6 +1,7 @@
 import {
     Table,
     TableBody,
+    // TableCaption,
     TableCell,
     TableHead,
     TableHeader,
@@ -14,7 +15,7 @@ import {
     CardHeader,
 } from "@/components/ui/card"
 
-import { UnitAddDialog } from "./components/unitAddDialog"
+import { UnitAddForm } from "./components/unitAddForm"
 import { prisma } from "@/lib/prisma"
 import { type Unit } from '@/schemas/zod'
 
@@ -58,7 +59,7 @@ export default async function UnitPage() {
                     </CardContent>
 
                     <CardFooter className="flex justify-end">
-                        <UnitAddDialog />
+                        <UnitAddForm />
                     </CardFooter>
                 </CardHeader>
             </Card>

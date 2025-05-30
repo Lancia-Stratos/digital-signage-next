@@ -23,13 +23,15 @@ export default async function Layout({ children }: { children: React.ReactNode }
         "--sidebar-width": "11.5rem",
         "--sidebar-width-mobile": "11.5rem"
       } as CSSProperties & CustomProperties}
-      className="flex h-screen overflow-hidden"
+      className="flex h-screen"
     >
-      <div className="h-full overflow-y-auto overflow-x-hidden">
-        <AppSidebar />
-      </div>
+
+      {/* サイドバーのコンテナ */}
+      <AppSidebar />
       <main className="flex-1 overflow-x-hidden">
+
         <div className="bg-gray-100 min-h-screen w-full">
+          {/* このchildrenは、localhost:3000/(signed-in)/page.tsx のページ */}
           <div className="mx-3">
             <div className="pt-3.5">
               {children}
@@ -37,6 +39,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
           </div>
         </div>
       </main>
+
     </SidebarProvider>
   )
 }
