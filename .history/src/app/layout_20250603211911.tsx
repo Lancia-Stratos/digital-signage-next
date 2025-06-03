@@ -48,6 +48,16 @@ export default function RootLayout({
             <Toaster
               position="top-right"
               richColors
+              theme={{
+                success: {
+                  background: "#e0f2fe",
+                  color: "#2563eb",
+                },
+                info: {
+                  background: "#dcfce7",
+                  color: "#22c55e",
+                }
+              }}
             />
           </body>
         </html>

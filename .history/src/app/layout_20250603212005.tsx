@@ -48,6 +48,7 @@ export default function RootLayout({
             <Toaster
               position="top-right"
               richColors
+              theme="dark"
             />
           </body>
         </html>
