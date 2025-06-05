@@ -93,10 +93,24 @@ export function UnitEditDialog({ open, onOpenChange, unit, onUpdated, onDeleted 
         >
             <DialogContent className="sm:max-w-[425px]">
                 <DialogHeader>
-                    <DialogTitle>単位編集</DialogTitle>
-                    <DialogDescription>
-                        {showDeleteConfirm ? `単位「${unit?.name}」を削除しますか？この操作は取り消せません。` : ""}
-                    </DialogDescription>
+                    <div className="flex justify-between items-start">
+                        <div>
+                            <DialogTitle>単位編集</DialogTitle>
+                            <DialogDescription>
+                                {showDeleteConfirm ? `単位「${unit?.name}」を削除しますか？この操作は取り消せません。` : ""}
+                            </DialogDescription>
+                        </div>
+                        {!showDeleteConfirm && (
+                            <Button
+                                variant="ghost"
+                                size="sm"
+                                onClick={() => setShowDeleteConfirm(true)}
+                                className="text-xs text-gray-500 hover:text-red-600"
+                            >
+                                削除
+                            </Button>
+                        )}
+                    </div>
                 </DialogHeader>
                 {!showDeleteConfirm ? (
                     <>
@@ -117,20 +131,18 @@ export function UnitEditDialog({ open, onOpenChange, unit, onUpdated, onDeleted 
                                 </p>
                             )}
                         </div>
-
-                        <DialogFooter className="items-center justify-between">
-
-                            <div className="flex flex-col gap-10">
-                                <Button onClick={handleSubmit(onSubmit)}>保存</Button>
-
-                                <Button
-                                    variant="destructive"
-                                    onClick={() => setShowDeleteConfirm(true)}
-                                >
-                                    削除
-                                </Button>
-                            </div>
-
+                        <div className="flex justify-between items-end pt-4">
+                            <Button
+                                variant="destructive"
+                                size="sm"
+                                onClick={() => setShowDeleteConfirm(true)}
+                                className="text-xs"
+                            >
+                                削除
+                            </Button>
+                        </div>
+                        <DialogFooter>
+                            <Button onClick={handleSubmit(onSubmit)}>保存</Button>
                         </DialogFooter>
                     </>
                 ) : (

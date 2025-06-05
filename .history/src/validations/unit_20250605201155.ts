@@ -7,17 +7,15 @@ export const UnitSchema = z.object({
     .max(5, { message: "単位名は5文字以内で入力してください" }),
 });
 
-export const UnitWithIdSchema = UnitSchema.extend({
-  id: z.number(),
-  createdAt: z.date(),
-  updatedAt: z.date(),
-});
-
 // export const UnitFormSchema = UnitSchema.extend({
 //   id: z.string().optional(),
 // });
 
 // 型を定義
 export type Unit = z.infer<typeof UnitSchema>;
-export type UnitWithId = z.infer<typeof UnitWithIdSchema>;
+export type UnitWithId = Unit & {
+  id: number;
+  createdAt: Date;
+  updatedAt: Date;
+};
 // export type UnitForm = z.infer<typeof UnitFormSchema>;

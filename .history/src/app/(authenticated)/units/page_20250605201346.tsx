@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/prisma";
-import UnitPageClient from "./components/UnitPageClient";
+import UnitPageClient from "./UnitPageClient";
 import { UnitWithId } from "@/validations/unit";
 
 export default async function UnitPage() {

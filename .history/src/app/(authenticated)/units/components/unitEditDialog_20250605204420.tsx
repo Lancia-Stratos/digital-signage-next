@@ -125,6 +125,7 @@ export function UnitEditDialog({ open, onOpenChange, unit, onUpdated, onDeleted 
 
                                 <Button
                                     variant="destructive"
+                                    size="sm"
                                     onClick={() => setShowDeleteConfirm(true)}
                                 >
                                     削除

@@ -91,9 +91,9 @@ export function UnitEditDialog({ open, onOpenChange, unit, onUpdated, onDeleted 
                 }
             }}
         >
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent className="">
                 <DialogHeader>
-                    <DialogTitle>単位編集</DialogTitle>
+                    <DialogTitle>単位削除</DialogTitle>
                     <DialogDescription>
                         {showDeleteConfirm ? `単位「${unit?.name}」を削除しますか？この操作は取り消せません。` : ""}
                     </DialogDescription>
@@ -117,20 +117,16 @@ export function UnitEditDialog({ open, onOpenChange, unit, onUpdated, onDeleted 
                                 </p>
                             )}
                         </div>
-
-                        <DialogFooter className="items-center justify-between">
-
-                            <div className="flex flex-col gap-10">
-                                <Button onClick={handleSubmit(onSubmit)}>保存</Button>
-
-                                <Button
-                                    variant="destructive"
-                                    onClick={() => setShowDeleteConfirm(true)}
-                                >
-                                    削除
-                                </Button>
-                            </div>
-
+                        <DialogFooter className="flex justify-between items-center">
+                            <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() => setShowDeleteConfirm(true)}
+                                className="text-red-600 border-red-300 hover:bg-red-50"
+                            >
+                                削除
+                            </Button>
+                            <Button onClick={handleSubmit(onSubmit)}>保存</Button>
                         </DialogFooter>
                     </>
                 ) : (

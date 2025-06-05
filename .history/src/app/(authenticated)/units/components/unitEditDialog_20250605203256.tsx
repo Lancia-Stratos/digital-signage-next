@@ -117,20 +117,18 @@ export function UnitEditDialog({ open, onOpenChange, unit, onUpdated, onDeleted 
                                 </p>
                             )}
                         </div>
-
-                        <DialogFooter className="items-center justify-between">
-
-                            <div className="flex flex-col gap-10">
-                                <Button onClick={handleSubmit(onSubmit)}>保存</Button>
-
-                                <Button
-                                    variant="destructive"
-                                    onClick={() => setShowDeleteConfirm(true)}
-                                >
-                                    削除
-                                </Button>
-                            </div>
-
+                        <div className="flex justify-between items-end pt-4">
+                            <Button
+                                variant="destructive"
+                                size="sm"
+                                onClick={() => setShowDeleteConfirm(true)}
+                                className="text-xs"
+                            >
+                                削除
+                            </Button>
+                        </div>
+                        <DialogFooter>
+                            <Button onClick={handleSubmit(onSubmit)}>保存</Button>
                         </DialogFooter>
                     </>
                 ) : (

@@ -120,12 +120,14 @@ export function UnitEditDialog({ open, onOpenChange, unit, onUpdated, onDeleted 
 
                         <DialogFooter className="items-center justify-between">
 
-                            <div className="flex flex-col gap-10">
+                            <div className="flex flex-col gap-8">
                                 <Button onClick={handleSubmit(onSubmit)}>保存</Button>
 
                                 <Button
                                     variant="destructive"
+                                    size="sm"
                                     onClick={() => setShowDeleteConfirm(true)}
+                                    className="text-red-600 border-red-300 hover:bg-red-50"
                                 >
                                     削除
                                 </Button>
