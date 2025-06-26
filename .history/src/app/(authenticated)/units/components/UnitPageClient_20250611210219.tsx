@@ -1,31 +1,15 @@
 "use client";
-import { UnitEditDialog } from "./UnitEditDialog";
-import { UnitAddDialog } from "./UnitAddDialog";
+import { UnitEditDialog } from "./unitEditDialog";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
+import { UnitAddDialog } from "./unitAddDialog";
 import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
+    Table, TableBody, TableCell, TableHead, TableHeader, TableRow
 } from "@/components/ui/table";
-import {
-    Card,
-    CardContent,
-    CardFooter,
-    CardHeader,
-} from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { UnitWithId } from "@/validations/unit";
 
-// 型を定義
-type Unit = {
-    units: UnitWithId[];
-};
-
-// 型を使って関数を書く
-export default function UnitPageClient({ units }: Unit) {
+export default function UnitPageClient({ units }: { units: UnitWithId[] }) {
     const [currentTime, setCurrentTime] = useState<string>("");
     const router = useRouter();
 

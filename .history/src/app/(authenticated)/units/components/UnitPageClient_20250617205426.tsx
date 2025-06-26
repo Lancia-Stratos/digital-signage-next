@@ -19,12 +19,12 @@ import {
 } from "@/components/ui/card";
 import { UnitWithId } from "@/validations/unit";
 
-// 型を定義
+// まず型を定義
 type Unit = {
     units: UnitWithId[];
 };
 
-// 型を使って関数を書く
+// その型を使って関数を書く
 export default function UnitPageClient({ units }: Unit) {
     const [currentTime, setCurrentTime] = useState<string>("");
     const router = useRouter();

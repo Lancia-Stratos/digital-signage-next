@@ -26,7 +26,7 @@ type Unit = {
 
 // 型を使って関数を書く
 export default function UnitPageClient({ units }: Unit) {
-    const [currentTime, setCurrentTime] = useState<string>("");
+    const [currentTime, setCurrentTime] = useState();
     const router = useRouter();
 
     useEffect(() => {

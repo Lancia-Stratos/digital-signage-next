@@ -24,7 +24,7 @@ type Unit = {
     units: UnitWithId[];
 };
 
-// 型を使って関数を書く
+// その型を使って関数を書く
 export default function UnitPageClient({ units }: Unit) {
     const [currentTime, setCurrentTime] = useState<string>("");
     const router = useRouter();

@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
@@ -21,7 +20,6 @@ type UnitEditDialogProps = {
 export function UnitEditDialog({ unit, onSuccess, children }: UnitEditDialogProps) {
     const [open, setOpen] = useState(false);
     const form = useForm<Unit>({
-        mode: "onChange",
         resolver: zodResolver(UnitSchema),
         defaultValues: { name: unit.name }
     });
@@ -44,6 +42,7 @@ export function UnitEditDialog({ unit, onSuccess, children }: UnitEditDialogProp
     };
 
     const handleDelete = async () => {
+        if (!confirm(`単位「${unit.name}」を削除しますか？`)) return;
         const result = await deleteUnit(unit.id);
         if (result.success) {
             toast.success(`単位「${unit.name}」を削除しました`);
@@ -53,15 +52,8 @@ export function UnitEditDialog({ unit, onSuccess, children }: UnitEditDialogProp
         }
     };
 
-    const handleOpenChange = (newOpen: boolean) => {
-        setOpen(newOpen);
-        if (!newOpen) {
-            form.reset({ name: unit.name });
-        }
-    };
-
     return (
-        <Dialog open={open} onOpenChange={handleOpenChange}>
+        <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>{children}</DialogTrigger>
             <DialogContent>
                 <DialogHeader>
@@ -80,30 +72,12 @@ export function UnitEditDialog({ unit, onSuccess, children }: UnitEditDialogProp
                                 </FormItem>
                             )}
                         />
-                        <div className="flex justify-between gap-2">
-                            <div className="flex gap-2">
-                                <Button type="submit" disabled={form.formState.isSubmitting}>
-                                    {form.formState.isSubmitting ? "保存中..." : "保存"}
-                                </Button>
-                                <Button type="button" variant="outline" onClick={() => handleOpenChange(false)}>キャンセル</Button>
-                            </div>
-                            <AlertDialog>
-                                <AlertDialogTrigger asChild>
-                                    <Button type="button" variant="destructive">削除</Button>
-                                </AlertDialogTrigger>
-                                <AlertDialogContent>
-                                    <AlertDialogHeader>
-                                        <AlertDialogTitle>削除の確認</AlertDialogTitle>
-                                        <AlertDialogDescription>
-                                            単位「{unit.name}」を削除しますか？この操作は取り消せません。
-                                        </AlertDialogDescription>
-                                    </AlertDialogHeader>
-                                    <AlertDialogFooter>
-                                        <AlertDialogCancel>キャンセル</AlertDialogCancel>
-                                        <AlertDialogAction onClick={handleDelete}>削除</AlertDialogAction>
-                                    </AlertDialogFooter>
-                                </AlertDialogContent>
-                            </AlertDialog>
+                        <div className="flex gap-2 justify-end">
+                            <Button type="button" variant="outline" onClick={() => setOpen(false)}>キャンセル</Button>
+                            <Button type="submit" disabled={form.formState.isSubmitting}>
+                                {form.formState.isSubmitting ? "保存中..." : "保存"}
+                            </Button>
+                            <Button type="button" variant="destructive" onClick={handleDelete}>削除</Button>
                         </div>
                     </form>
                 </Form>

@@ -19,13 +19,13 @@ import {
 } from "@/components/ui/card";
 import { UnitWithId } from "@/validations/unit";
 
-// 型を定義
-type Unit = {
+// まず型を定義
+type UnitPageClientProps = {
     units: UnitWithId[];
 };
 
-// 型を使って関数を書く
-export default function UnitPageClient({ units }: Unit) {
+// その型を使って関数を書く
+export default function UnitPageClient({ units }: UnitPageClientProps) {
     const [currentTime, setCurrentTime] = useState<string>("");
     const router = useRouter();
 

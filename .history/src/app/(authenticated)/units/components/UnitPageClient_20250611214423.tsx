@@ -1,6 +1,6 @@
 "use client";
-import { UnitEditDialog } from "./UnitEditDialog";
-import { UnitAddDialog } from "./UnitAddDialog";
+import { UnitEditDialog } from "./unitEditDialog";
+import { UnitAddDialog } from "./unitAddDialog";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
@@ -19,13 +19,7 @@ import {
 } from "@/components/ui/card";
 import { UnitWithId } from "@/validations/unit";
 
-// 型を定義
-type Unit = {
-    units: UnitWithId[];
-};
-
-// 型を使って関数を書く
-export default function UnitPageClient({ units }: Unit) {
+export default function UnitPageClient({ units }: { units: UnitWithId[] }) {
     const [currentTime, setCurrentTime] = useState<string>("");
     const router = useRouter();
 

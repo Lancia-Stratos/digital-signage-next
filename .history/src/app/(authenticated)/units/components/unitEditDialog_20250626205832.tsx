@@ -53,15 +53,8 @@ export function UnitEditDialog({ unit, onSuccess, children }: UnitEditDialogProp
         }
     };
 
-    const handleOpenChange = (newOpen: boolean) => {
-        setOpen(newOpen);
-        if (!newOpen) {
-            form.reset({ name: unit.name });
-        }
-    };
-
     return (
-        <Dialog open={open} onOpenChange={handleOpenChange}>
+        <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>{children}</DialogTrigger>
             <DialogContent>
                 <DialogHeader>
@@ -85,7 +78,7 @@ export function UnitEditDialog({ unit, onSuccess, children }: UnitEditDialogProp
                                 <Button type="submit" disabled={form.formState.isSubmitting}>
                                     {form.formState.isSubmitting ? "保存中..." : "保存"}
                                 </Button>
-                                <Button type="button" variant="outline" onClick={() => handleOpenChange(false)}>キャンセル</Button>
+                                <Button type="button" variant="outline" onClick={() => setOpen(false)}>キャンセル</Button>
                             </div>
                             <AlertDialog>
                                 <AlertDialogTrigger asChild>
